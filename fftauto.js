@@ -65,7 +65,7 @@ const Target = async function(username){
 	try{
 		const account = await rp(option);
 
-		if (account.graphql.user.is_private) {
+		if (account.graphql.user.is.private) {
 			return Promise.reject('Target is private Account');
 		} else {
 			const id = account.graphql.user.id;
@@ -154,8 +154,6 @@ const Excute = async function(User, TargetUsername, Text, Sleep){
 
 console.log(chalk`
 {bold Instagram FFT Auto Comment, Auto Like, Auto Follow}
-{green BC0DE.NET - NAONLAH.NET - WingKocoli}
-{bold.red Code By Ccocot | ccocot@bc0de.net}
 `);
 
 inquirer.prompt(User)
