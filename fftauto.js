@@ -65,7 +65,7 @@ const Target = async function(username){
 	try{
 		const account = await rp(option);
 
-		if (account.graphql.user.is.private) {
+		if (account.graphql.user.is_private) {
 			return Promise.reject('Target is private Account');
 		} else {
 			const id = account.graphql.user.id;
@@ -132,6 +132,7 @@ const Excute = async function(User, TargetUsername, Text, Sleep){
 			TargetResult = _.chunk(TargetResult, 5);
 			for (let i = 0; i < TargetResult.length; i++) {
 				await Promise.all(TargetResult[i].map(async(akun) => {
+					console.log(akun);
 					if (!getFollowers.includes(akun.id) && akun.params.isPrivate === false) {
 						var ranText = Text[Math.floor(Math.random() * Text.length)];
 						const ngeDo = await CommentAndLike(doLogin.session, akun.id, ranText)
@@ -154,6 +155,8 @@ const Excute = async function(User, TargetUsername, Text, Sleep){
 
 console.log(chalk`
 {bold Instagram FFT Auto Comment, Auto Like, Auto Follow}
+{green BC0DE.NET - NAONLAH.NET - WingKocoli}
+{bold.red Code By Ccocot | ccocot@bc0de.net}
 `);
 
 inquirer.prompt(User)
