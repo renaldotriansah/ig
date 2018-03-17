@@ -1,5 +1,3 @@
-'use strict'
-
 const Client = require('instagram-private-api').V1;
 const delay = require('delay');
 const chalk = require('chalk');
@@ -86,8 +84,6 @@ const Excute = async function(User,sleep){
 
 console.log(chalk`
 {bold Instagram Unfollow All Following}
-{green BC0DE.NET - NAONLAH.NET - WingKocoli}
-{bold.red Code By Ccocot | ccocot@bc0de.net}
 `);
 
 inquirer.prompt(User)
